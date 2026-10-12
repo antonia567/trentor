@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Contact Us | Trentor</title>
+</head>
+<body>
+    
+  
+  <header class="menu">
+  <a href="index.html" class="logo-link" aria-label="Trentor, página inicial" transition="no">
+    <img src="trentor.jpg" alt="" class="logo-img">
+    <span class="logo-nome" translate="no">rentor</span>
+  </a>
+
+  <ul class="ul-main" id="menu-principal">
+    <li> <a href="index.html">Home</a></li>
+    <li><a href="servicos.html">Services</a></li>
+    <li><a href="sobre.html">About</a></li>
+    <li class="li-contacto">
+    </li>
+  </ul>
+
+  <!-- Só aparece no telemóvel -->
+  <div class="mobile-actions">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu"
+            aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+    <div class="formulario">
+  <form class="login-form">
+      <h2>Contact Us</h2>
+
+      <label for="inome">Name and Surname</label>
+      <input type="text" id="inome" name="nome" placeholder="Enter your name and surname">
+
+<label for="inumero">
+  Contact Method
+  <span id="badgeContato" class="badge-contato hidden"></span>
+</label>
+
+<div class="input-contato-wrapper">
+  <input type="tel" id="inumero" name="número" placeholder="Select an option" onclick="toggleMenuContacto()" autocomplete="off">
+
+  <div id="menuContato" class="menu-contato hidden">
+    <button type="button" onclick="escolherContacto('email')">📧 Email</button>
+    <button type="button" onclick="escolherContacto('whatsapp')">💬 WhatsApp</button>
+  </div>
+</div>
+
+<input type="hidden" id="metodoContato" name="metodoContato" value="">
+
+<!-- Campo extra que aparece conforme a escolha -->
+ <div id="campoExtra" class="campo-extra hidden">
+      <label for="inputExtra" id="labelExtra"></label>
+      <input type="text" id="inputExtra" name="contatoExtra" placeholder="">
+    </div>
+
+    <label for="inputExtraProdServ">Which service?</label>
+<select id="inputExtraProdServ" name="servico">
+  <option value="" disabled selected>Select an option</option>
+  <option value="Logística">Logística</option>
+  <option value="Automação com IA">Automação com IA</option>
+</select>
+
+    <div id="erroFormulario" class="erro-formulario hidden"></div>
+    <button type="submit" class="btn-enviar" id="btnEnviar">Send</button>
+  </form>
+</div>
+
+        <!--Itens do fim da página--> 
+  <footer class="sessao sessao-escura final-pagina">
+    <div class="container fim">
+      <div class="item-fim">
+        <h3>Company</h3>
+        <a href="sobre.html" class="link-fim">About us</a>
+      </div>
+    
+      <div class="item-fim">
+        <h3>Contact</h3>
+          <div class="social-icons" style=" font-size: 20px;">
+  <a href="https://www.facebook.com/perfil" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook"></i>
+  </a>
+
+  <a href="https://wa.me/244943912667" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+        <a href="https://www.instagram.com/perfil" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+      </div>
+    </div>
+     <p class="link-fim">© 2026 Trentor. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

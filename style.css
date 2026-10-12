@@ -1,0 +1,1047 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.ul-main {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 16px;
+    gap: 100px;
+    font-weight: 600;
+}
+
+.ul-main a:not(.btn-contacto) {
+    color: #fff;
+}
+
+.ul-main a:not(.btn-contacto):hover {
+    color: #ccc;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    background-color: #000;
+    position: relative;
+    z-index: 100;
+}
+
+/*=== Letras do Logo ===*/
+.logo-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.logo-nome {
+    max-width: 0;
+    margin-left: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 12px;
+    transition: max-width 0.4s ease, margin-left 0.4s ease, opacity 0.3s ease;
+}
+
+.logo-link:hover .logo-nome,
+.logo-link:focus-visible .logo-nome {
+    max-width: 160px;
+    margin-left: 12px;
+    opacity: 1;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+ /* Secções */
+.sessao {
+    position: relative;
+    width: 100%;
+    padding: 80px 20px;
+}
+
+.sessao-clara  { background: #fff; color: #111; }
+.sessao-escura { background: #000; color: #fff; }
+
+.sessao h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.intro {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero depois de sessao */
+.sessao-hero {
+    min-height: calc(100dvh - 80px);
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+}
+
+.video-fundo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.sessao-video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.texto-video {
+    position: absolute;
+    top: 30%;
+    left: 40px;
+    z-index: 2;
+    max-width: 600px;
+    text-align: left;
+}
+
+.texto-video h1 {
+    font-size: 6rem;
+    margin: 0 0 15px 0;
+}
+
+.texto-video p {
+    font-size: 18px;
+}
+
+.etapas {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* Cards */
+.cards-container {
+    display: flex;
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.card,
+.card-escuro {
+    flex: 1;
+    min-width: 0;
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 32px 28px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-escuro {
+    background: #222222;
+}
+
+.card-icone,
+.card-icone-claro {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffff;
+    color: #000;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.card-icone-claro {
+    background: #fff;
+    color: #000;
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.card-escuro h3 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.card-escuro p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.sessao-img-fundo {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 70%), url("drone.jpg") center/cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    color: #fff;
+}
+
+
+.texto-img p {
+    max-width: 1100px;
+    text-align: left;
+    font-family: Arial;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 60px;
+}
+
+/* Hover e toque */
+.card:hover,
+.card:active,
+.card-escuro:hover,
+.card-escuro:active {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+}
+
+.card-escuro:hover,
+.card-escuro:active {
+    box-shadow: 0 18px 36px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilização do botão contactar*/
+.btn-contacto {
+    display: inline-block;
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #fff;
+    color: #111;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 50px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #ccc;
+}
+
+
+.btn-enviar {
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+    border: none;
+    color:  #111;
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/*Menu hamburguer*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+ 
+.hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* animação para virar um X quando ativo */
+.hamburger.ativo span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.hamburger.ativo span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.ativo span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.mobile-actions {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-contacto-mobile {
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    margin-top: 0;
+}
+
+
+/* Estilização do modal e do overlay */
+.modal-overlay {  /*Início do formulário de login*/
+    z-index: 9999;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.ativo {
+    display: flex;
+}
+
+.formulario{
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Estilização do formulário de login */
+.login-form {
+    width: 350px;
+    background-color: #111;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Estilização do título do formulário */
+.login-form h2 {
+    color:  #fff;
+    font-family: Arial;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* Estilização dos rótulos e campos de entrada */
+.login-form label {
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Estilização dos campos de entrada */
+.login-form input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Efeito de foco nos campos de entrada */
+.login-form input:focus {
+    border: 1px solid #fff;
+}
+
+.login-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-extra {
+    color: #fff;
+    font-family: Arial;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-extra a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.login-extra a:hover {
+    color: darkgray;
+}
+
+/* Estilização do modal */
+.btn-enviar:active {
+    transform: scale(0.90);
+}
+
+    /* EStilização do campo "input" especial*/
+.input-contato-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+    /*fazer todos os campos terem a mesma medida*/
+.login-form .input-contato-wrapper input,
+.login-form .input-produtoservico-wrapper input,
+.login-form .campo-extra input,
+.login-form .campo-extra select{
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: block;
+}
+
+.menu-contato {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.menu-contato button {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: #B2FFFC;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.badge-contato {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+/* Estilização das badges de contato */
+.badge-email {
+  background-color: #25D366;
+  box-shadow: 0 0 6px rgba(37, 211, 102, 0.5);
+}
+
+.badge-whatsapp {
+  background-color: #25D366;
+  box-shadow: 0 0 6px rgba(37, 211, 102, 0.5);
+}
+
+/* Destaca o campo Telemóvel depois de escolhida a opção */
+.input-contato-wrapper input.preenchido {
+  border: 1px solid #fff;
+  background-color: rgba(0, 255, 255, 0.08);
+}
+
+.hidden {
+  display: none;
+}
+
+.input-produtoservico-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.badge-servico {
+  background-color: #25D366;
+  box-shadow: 0 0 6px rgba(37, 211, 102, 0.5);
+}
+
+/* Destaca o campo Produto/Serviço depois de escolhida a opção */
+.login-form select {
+  background-color:#fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #000;
+  font-family: Arial;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.login-form select:focus {
+  border: 1px solid #fff;
+}
+/* Destaca o campo Produto/Serviço depois de escolhida a opção */
+.campo-extra {
+  flex-direction: column;
+}
+
+.campo-extra.hidden {
+  display: none;
+}
+
+.erro-formulario {
+  color: #e53935;
+  background: #fdecea;
+  border: 1px solid #e53935;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.campo-invalido {
+  border: 2px solid #e53935 !important; /*Fim do formulário*/
+} 
+
+/*========== Página Serviços ===========*/
+
+.wrap,
+.texto-topo {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+/* Topo */
+.topo {
+    padding: 90px 0 70px;
+    border-bottom: 2px solid #000;
+}
+
+.topo h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    max-width: 14ch;
+    margin-bottom: 24px;
+}
+
+.topo p {
+    font-size: 1.2rem;
+    max-width: 52ch;
+}
+
+/* Blocos */
+.bloco {
+    padding: 70px 0;
+    border-bottom: 1px solid #000;
+}
+
+.bloco h2 {
+    font-size: 1.9rem;
+    margin-bottom: 40px;
+}
+
+/* O que fazemos */
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid #000;
+    
+}
+
+.item:first-child {
+    border-top: none;
+}
+.item:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.item h3 {
+    font-size: 1.4rem;
+}
+
+.item p {
+    max-width: 56ch;
+}
+
+.passos {
+    counter-reset: passo;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+
+.passos li {
+    counter-increment: passo;
+    border: 2px solid #000;
+    padding: 24px;
+}
+
+.passos li::before {
+    content: counter(passo);
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.passos h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Para quem é */
+.para ul {
+    padding-left: 20px;
+    max-width: 56ch;
+}
+
+.para li {
+    margin-bottom: 10px;
+}
+
+/* Chamada final */
+.cta {
+    background: #000;
+    color: #fff;
+    padding: 80px 0;
+    border-bottom: none;
+}
+
+.cta h2 {
+    margin-bottom: 12px;
+}
+
+.cta p {
+    margin-bottom: 28px;
+    max-width: 48ch;
+}
+
+.botao {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 14px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border: 2px solid #fff;
+}
+
+.botao:hover {
+    background: #000;
+    color: #fff;
+}
+
+ /*==========Página Sobre==========*/
+ .sobre{
+  max-width: 1200px;    
+  margin: 0 auto;         
+  padding-left: 40px;      
+  padding-right: 40px; 
+    
+ }
+
+ .sobre h1{
+    font-size: 60px;
+    color: #fff;
+    font-family: Arial;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+ }
+
+.sobre p {
+    font-size: 17px ;
+    color: #ccc;
+    font-family: Arial;
+    margin-bottom: 20px;
+    letter-spacing: 1.3px;
+    margin-bottom: 80px;
+}
+
+
+/*Colunas da página sobre*/
+.organizacao {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.titulo-sessao {
+  font-size: 40px;
+  color: #fff;
+  font-family: Arial;
+  margin-bottom: 15px;
+}
+
+.organizacao .sessao-p {
+  font-size: 18px;
+  color: #ccc;
+  font-family: Arial;
+  margin-bottom: 50px;
+  letter-spacing: 1.5px;
+  margin-bottom: 130px;
+}
+
+.colunas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: left;      
+  margin-bottom: 200px;
+}
+
+.item-coluna {
+  flex: 1;
+  min-width: 280px;    
+}
+
+.item-coluna h3 {
+  color: #fff;
+  font-family: Arial;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.item-coluna p {
+  color: #ccc;
+  font-family: Arial;
+  font-size: 15px;
+  line-height: 1.6;  /* espaçamento entre linhas, deixa mais legível */
+  letter-spacing: 1.5px;
+
+}
+ 
+ /*==========Fim da página==========*/
+ .final-pagina { 
+    padding: 60px 20px; 
+    text-align: center;
+    background-color: #292929;
+ }
+
+.fim{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;     
+}
+
+.item-fim {
+  flex: 1;
+  min-width: 280px; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;     
+}
+
+.item-fim h3 {
+  color: #ccc;
+  font-family: Arial;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.link-fim{
+  color: #ccc;
+  font-size: 13px;
+  font-family: Arial;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+ 
+@media (max-width: 768px) {
+
+    .menu { 
+        height: 70px; 
+        padding: 0 16px; 
+        position: relative;
+    }
+
+    .ul-main {
+         gap: 20px;
+    }
+
+    .sessao { 
+        padding: 60px 16px; 
+    }
+
+    .sessao-hero { 
+        min-height: calc(100dvh - 70px);
+         padding: 0; 
+    }
+
+    .texto-video { 
+        left: 24px; 
+        max-width: 80%; 
+    }
+
+    .texto-video h1 {
+         font-size: clamp(2.5rem, 9vw, 4rem); 
+    }
+
+    .texto-video p {
+         font-size: 16px; 
+    }
+
+    .cards-container {
+         gap: 14px;
+        padding: 30px 0; 
+    }
+
+    .card, .card-escuro {
+         padding: 22px 16px; 
+        }
+    .card-icone,
+    .card-icone-claro {
+        width: 50px; height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .card h3, 
+    .card-escuro h3 {
+         font-size: 1rem; 
+    }
+
+    .card p, 
+    .card-escuro p {
+         font-size: 0.82rem; 
+        }
+
+    .passos { 
+        flex-direction: column; 
+    }
+
+    .seta {
+         transform: rotate(90deg); 
+    }
+
+    .login-form {
+        width: 90%; 
+        max-width: 350px; 
+    }
+
+    .mobile-actions {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Esconde o botão de contacto de dentro da lista */
+    .li-contacto {
+        display: none;
+    }
+
+    .ul-main {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+        background-color: #111; /* usa a cor do teu header */
+    }
+
+    .ul-main.aberto {
+        display: flex;
+    }
+
+    .ul-main li {
+        text-align: center;
+        padding: 12px 0;
+    }
+
+      .sessao-img-lado {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .imagem-lado {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu { 
+        height: 60px;
+         padding: 0 12px;
+         }
+
+    .logo-img { 
+        height: 34px;
+     }
+
+    .btn-contacto {
+         width: 110px; 
+         height: 32px; 
+         font-size: 14px; 
+        }
+
+    .sessao-hero { 
+        min-height: calc(100dvh - 60px); 
+    }
+
+    .texto-video {
+        left: 16px;
+        right: 16px;
+        top: 25%; 
+        max-width: none; 
+    }
+
+    .texto-video h1 {
+         font-size: 2.6rem; 
+    }
+
+    .texto-video p {
+         font-size: 15px; 
+    }
+
+    .cards-container { 
+        flex-direction: column;
+         gap: 16px;
+          padding: 24px 0;
+    
+        }
+    .card, .card-escuro { 
+        flex: none; 
+        width: 100%; 
+        padding: 24px 20px; 
+    }
+
+    .card h3, 
+    .card-escuro h3 {
+         font-size: 1.1rem; 
+    }
+
+    .card p, 
+    .card-escuro p {
+         font-size: 0.9rem; 
+    }
+
+    .fim { 
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .logo-nome { font-size: 1.1rem; letter-spacing: 1px; }
+
+      .sessao-img-fundo {
+        min-height: 70vh;
+        padding: 24px 20px;
+    }
+
+    .texto-img p {
+        text-align: left;
+        font-size: 20px;
+        
+    }
+
+    /*=== Página Serviços ===*/
+    .topo { 
+        padding: 60px 0 50px;
+     }
+    .bloco {
+         padding: 50px 0;
+     }
+    .item {
+         grid-template-columns: 1fr;
+          gap: 8px;
+    }
+    .passos {
+         grid-template-columns: 1fr; 
+    }
+}
+
+/* Telemóveis e tablets: não há hover, por isso mostra sempre */
+@media (hover: none) {
+    .logo-nome {
+        max-width: 160px;
+        margin-left: -2px;
+        opacity: 1;
+    }
+}
